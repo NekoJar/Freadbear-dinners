@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Home from "./ui/Home";
