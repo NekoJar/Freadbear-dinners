@@ -8,7 +8,6 @@ function CreateUser() {
   const [username, setUsername] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(username);
 
   function handleSubmit(e) {
     e.preventDefault();
