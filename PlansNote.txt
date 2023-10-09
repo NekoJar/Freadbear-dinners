@@ -1,0 +1,10 @@
+1. Gather application requirements and features
+
+
+2. Divide the application into pages
+
+
+3. Divide the application into feaure categories
+
+
+4. Decide on what libraries to use (tech decisions)
