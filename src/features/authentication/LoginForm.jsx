@@ -59,7 +59,7 @@ function LoginForm() {
           />
         </div>
       </div>
-      <div className=" mt-12 flex flex-col justify-end space-x-0 sm:flex-row sm:gap-0 sm:space-x-4">
+      <div className=" mt-12 flex flex-col justify-end gap-4 space-x-0 sm:flex-row sm:space-x-4">
         <Button to="/signup" type="signup">
           Sign Up
         </Button>
