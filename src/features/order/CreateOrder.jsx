@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import { formatCurrency } from "../../utils/helpers";
 import { fetchAddress } from "../user/userSlice";
+import { useUser } from "../authentication/useUser";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -16,6 +17,8 @@ const isValidPhone = (str) =>
   );
 
 function CreateOrder() {
+  const { user } = useUser();
+  const { fullName } = user.user_metadata;
   const {
     username,
     status: addressStatus,
@@ -52,7 +55,7 @@ function CreateOrder() {
               type="text"
               name="customer"
               required
-              defaultValue={username}
+              defaultValue={fullName}
             />
           </div>
         </div>

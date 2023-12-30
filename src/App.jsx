@@ -9,9 +9,14 @@ import Order, { loader as orderLoader } from "./features/order/Order";
 import CreateOrder, {
   action as createOrderAction,
 } from "./features/order/CreateOrder";
+import { Toaster } from "react-hot-toast";
 import { action as updateOrderAction } from "./features/order/UpdateOrder";
 import AppLayout from "./ui/AppLayout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ProtectedRoute from "./ui/ProtectedRoute";
+import Login from "./pages/Login";
+import SignupForm from "./features/authentication/SignupForm";
+import SignUp from "./pages/SignUp";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -23,8 +28,13 @@ const queryClient = new QueryClient({
 
 const router = createBrowserRouter([
   {
-    element: <AppLayout />,
+    element: (
+      <ProtectedRoute>
+        <AppLayout />
+      </ProtectedRoute>
+    ),
     errorElement: <Error />,
+
     children: [
       {
         path: "/",
@@ -52,7 +62,19 @@ const router = createBrowserRouter([
         errorElement: <Error />,
         action: updateOrderAction,
       },
+      // {
+      //   path: "/login",
+      //   element: <Login />,
+      // },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
   },
 ]);
 
@@ -60,6 +82,26 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "8px" }}
+        toastOptions={{
+          success: {
+            duration: 3000,
+          },
+          error: {
+            duration: 5000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "500px",
+            padding: "16px 24px",
+            backgroundColor: "var(--color-grey-0)",
+            color: "var(--color-grey-700)",
+          },
+        }}
+      />
     </QueryClientProvider>
   );
 }

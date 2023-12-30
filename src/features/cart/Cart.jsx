@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
-import LinkButton from "../../ui/LinkButton";
-import Button from "../../ui/Button";
-import CartItem from "./CartItem";
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart, deleteItem, getCart } from "./cartSlice";
+import Button from "../../ui/Button";
+import LinkButton from "../../ui/LinkButton";
 import { getUsername } from "../user/userSlice";
+import CartItem from "./CartItem";
 import EmptyCart from "./EmptyCart";
+import { clearCart, getCart } from "./cartSlice";
+import { useUser } from "../authentication/useUser";
 
 function Cart() {
   const dispatch = useDispatch();
+  const { user } = useUser();
+  const { fullName } = user.user_metadata;
 
   const username = useSelector(getUsername);
   const cart = useSelector(getCart);
@@ -18,7 +20,7 @@ function Cart() {
     <div className="px-4 py-3">
       <LinkButton to="/menu">&larr; Back to menu</LinkButton>
 
-      <h2 className="mt-7 text-xl font-semibold">Your cart, {username}</h2>
+      <h2 className="mt-7 text-xl font-semibold">Your cart, {fullName}</h2>
 
       <ul className="mt-3 divide-y divide-stone-200 border-b">
         {cart.map((item) => (
