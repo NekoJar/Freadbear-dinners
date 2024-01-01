@@ -11,6 +11,7 @@ import {
 } from "../../utils/helpers";
 import { useEffect } from "react";
 import UpdateOrder from "./UpdateOrder";
+import PaymentForm from "../payment/PaymentForm";
 
 function Order() {
   const order = useLoaderData();
@@ -93,6 +94,10 @@ function Order() {
           isLoadingIngredients={fetcher.state === "loading"}
         />
       )}
+
+      <div>
+        <PaymentForm />
+      </div>
     </div>
   );
 }

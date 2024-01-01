@@ -7,7 +7,7 @@ function Login() {
       <LoginHeader />
       <main className=" mx-auto max-w-3xl ">
         <div className="my-8  px-4">
-          <h1 className="mb-16 text-center text-xl font-extrabold uppercase md:text-3xl">
+          {/* <h1 className="mb-16 text-center text-xl font-extrabold uppercase md:text-3xl">
             FREADBEAR'S FAMILY DINER 🍕
             <br />
             <br />
@@ -15,7 +15,7 @@ function Login() {
               A magical place for kids and grown-ups alike, where fantasy and
               fun come to life.
             </span>
-          </h1>
+          </h1> */}
 
           <p className="mb-4 text-sm text-stone-600 md:text-base">
             👋 Welcome! Please start by fill this form below:
