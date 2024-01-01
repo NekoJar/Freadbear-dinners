@@ -17,6 +17,8 @@ import ProtectedRoute from "./ui/ProtectedRoute";
 import Login from "./pages/Login";
 import SignupForm from "./features/authentication/SignupForm";
 import SignUp from "./pages/SignUp";
+import bgVideo from "../public/pizza-video.mp4";
+import Footer from "./ui/Footer";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -80,9 +82,10 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="bg-yellow-50">
+    <div className="bg-transparent">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
+
         <Toaster
           position="top-center"
           gutter={12}

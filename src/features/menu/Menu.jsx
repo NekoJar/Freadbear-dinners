@@ -9,11 +9,13 @@ function Menu() {
   if (isLoading) return <Loader />;
 
   return (
-    <ul className="divide-y divide-stone-200 px-4">
-      {menus.map((pizza) => (
-        <MenuItem pizza={pizza} key={pizza.id} />
-      ))}
-    </ul>
+    <>
+      <ul className="divide-y divide-stone-200 px-4">
+        {menus.map((pizza) => (
+          <MenuItem pizza={pizza} key={pizza.id} />
+        ))}
+      </ul>
+    </>
   );
 }
 

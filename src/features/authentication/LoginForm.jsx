@@ -29,10 +29,12 @@ function LoginForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label className="sm:basis-40">Email Address</label>
-        <div className="grow">
+    <>
+      <Form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Email Address
+          </label>
           <input
             type="email"
             id="email"
@@ -41,13 +43,14 @@ function LoginForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={isLoading}
-            className="input"
+            className="input mt-1 w-full p-2 "
           />
         </div>
-      </div>
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label className="sm:basis-40">Password</label>
-        <div className="grow">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+
           <input
             type="password"
             id="password"
@@ -55,19 +58,25 @@ function LoginForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             disabled={isLoading}
-            className="input"
+            className="input mt-1 w-full p-2"
           />
         </div>
+        <div>
+          <Button type="login" disabled={isLoading}>
+            {!isLoading ? "Log in" : <SpinnerMini />}
+          </Button>
+        </div>
+      </Form>
+      <div class="mt-4 text-center text-sm text-gray-600">
+        <p>
+          Still haven't created an account?
+          <a href="/signup" className="text-black hover:underline">
+            {" "}
+            Sign up here
+          </a>
+        </p>
       </div>
-      <div className=" mt-12 flex flex-col justify-end gap-4 space-x-0 sm:flex-row sm:space-x-4">
-        <Button to="/signup" type="signup">
-          Sign Up
-        </Button>
-        <Button type="login" disabled={isLoading}>
-          {!isLoading ? "Log in" : <SpinnerMini />}
-        </Button>
-      </div>
-    </Form>
+    </>
   );
 }
 

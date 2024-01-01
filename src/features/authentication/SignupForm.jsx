@@ -17,10 +17,13 @@ function SignupForm() {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label className="sm:basis-40">Fullname</label>
-        <div className="grow">
+    <>
+      <Form onSubmit={onSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Fullname
+          </label>
+
           <input
             type="text"
             id="fullName"
@@ -29,11 +32,12 @@ function SignupForm() {
             className="input"
           />
         </div>
-      </div>
 
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label className="sm:basis-40">Email Address</label>
-        <div className="grow">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Email Address
+          </label>
+
           <input
             type="email"
             id="email"
@@ -46,11 +50,12 @@ function SignupForm() {
             className="input"
           />
         </div>
-      </div>
 
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label className="sm:basis-40">Password</label>
-        <div className="grow">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Password
+          </label>
+
           <input
             type="password"
             id="password"
@@ -65,11 +70,12 @@ function SignupForm() {
             className="input"
           />
         </div>
-      </div>
 
-      <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
-        <label className="sm:basis-40">Confirm Password</label>
-        <div className="grow">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">
+            Confirm Password
+          </label>
+
           <input
             type="password"
             id="passwordConfirm"
@@ -82,19 +88,23 @@ function SignupForm() {
             className="input"
           />
         </div>
-      </div>
 
-      <div className="flex flex-col justify-end gap-4 sm:flex-row sm:gap-0">
-        <div className="pr-0 sm:pr-4">
-          <Button type="secondary" disabled={isLoading} to="/login">
-            Cancel
+        <div>
+          <Button type="login" disabled={isLoading}>
+            Create new user
           </Button>
         </div>
-        <Button type="primary" disabled={isLoading}>
-          Create new user
-        </Button>
+      </Form>
+      <div class="mt-4 text-center text-sm text-gray-600">
+        <p>
+          Already have an account?
+          <a href="/login" className="text-black hover:underline">
+            {" "}
+            Login here
+          </a>
+        </p>
       </div>
-    </Form>
+    </>
   );
 }
 

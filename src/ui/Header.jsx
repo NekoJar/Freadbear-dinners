@@ -8,7 +8,7 @@ function Header() {
   const { user } = useUser();
   const { fullName } = user.user_metadata;
   return (
-    <header className=" flex items-center justify-around  bg-yellow-400 px-4 py-4 uppercase sm:px-6">
+    <header className="relative z-10 flex items-center justify-around  bg-yellow-400 px-4 py-4 uppercase sm:px-6">
       <Link to="/" className="hidden tracking-widest md:block">
         Freadbear's Family Diner Co.
       </Link>

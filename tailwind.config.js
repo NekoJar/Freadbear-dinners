@@ -9,5 +9,5 @@ export default {
 
     extend: { height: { screen: "100dvh" } },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide", "daisyui")],
 };
