@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 import Button from "../../ui/Button";
 import { useUser } from "../authentication/useUser";
+import SpinnerMini from "../../ui/SpinnerMini";
 
 const PaymentForm = () => {
   const order = useLoaderData();
@@ -11,11 +12,11 @@ const PaymentForm = () => {
   const { user } = useUser();
   const { fullName } = user.user_metadata;
 
-  const { orderPrice } = order;
+  const { orderPrice, priorityPrice } = order;
 
   const stripe = useStripe();
   const elements = useElements();
-  const amount = orderPrice;
+  const amount = orderPrice + priorityPrice;
   const currentUser = fullName;
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
@@ -59,12 +60,15 @@ const PaymentForm = () => {
   };
 
   return (
-    <div className="flex h-[300px] flex-col items-center justify-center">
-      <form className="h-[100px] min-w-[500px]" onSubmit={paymentHandler}>
+    <div className="-m-16 flex h-[300px] flex-col items-center justify-center">
+      <form
+        className="h-[100px] min-w-[500px] space-y-8"
+        onSubmit={paymentHandler}
+      >
         <h2>Credit Card Payment:</h2>
         <CardElement />
         <Button type="primary" isLoading={isProcessingPayment}>
-          Pay Now
+          {!isProcessingPayment ? "Pay Now" : <SpinnerMini />}
         </Button>
       </form>
     </div>
