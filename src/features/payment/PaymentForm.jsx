@@ -20,6 +20,8 @@ const PaymentForm = () => {
   const currentUser = fullName;
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
+  const [paymentSuccess, setPaymentSuccess] = useState(false);
+
   const paymentHandler = async (e) => {
     e.preventDefault();
     if (!stripe || !elements) {
@@ -55,22 +57,34 @@ const PaymentForm = () => {
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
         alert("Payment Successful!");
+        setPaymentSuccess(true);
       }
     }
   };
 
   return (
     <div className="-m-16 flex h-[300px] flex-col items-center justify-center">
-      <form
-        className="h-[100px] min-w-[500px] space-y-8"
-        onSubmit={paymentHandler}
-      >
-        <h2>Credit Card Payment:</h2>
-        <CardElement />
-        <Button type="primary" isLoading={isProcessingPayment}>
-          {!isProcessingPayment ? "Pay Now" : <SpinnerMini />}
-        </Button>
-      </form>
+      {!paymentSuccess ? (
+        <form
+          className="h-[100px] min-w-[300px] space-y-8 sm:min-w-[700px]"
+          onSubmit={paymentHandler}
+        >
+          <h2>Credit Card Payment:</h2>
+          <CardElement />
+          <Button
+            type={isProcessingPayment ? "secondary" : "primary"}
+            isLoading={isProcessingPayment}
+            disabled={isProcessingPayment}
+          >
+            {!isProcessingPayment ? "Pay Now" : <SpinnerMini />}
+          </Button>
+        </form>
+      ) : (
+        <div>
+          <h2>Payment Successful!</h2>
+          {/* You can add additional information or UI elements here */}
+        </div>
+      )}
     </div>
   );
 };
