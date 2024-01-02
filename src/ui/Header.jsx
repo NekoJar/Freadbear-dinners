@@ -3,7 +3,7 @@ import SearchOrder from "../features/order/SearchOrder";
 import Username from "../features/user/Username";
 import Logout from "../features/authentication/Logout";
 import { useUser } from "../features/authentication/useUser";
-import Logo from "../../public/FazEnt_logo.svg";
+import Logo from "../../public/FazEnt_logo_new.svg";
 
 function Header() {
   const { user } = useUser();
