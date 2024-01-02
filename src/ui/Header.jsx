@@ -13,7 +13,7 @@ function Header() {
         <Link to="/">
           <img
             className="block h-[50px] w-[50px] sm:hidden"
-            src="public/FazEnt_logo_new.svg"
+            src="public/FazEnt_logo.png"
             alt="icon"
           />
         </Link>
