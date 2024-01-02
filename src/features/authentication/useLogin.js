@@ -16,7 +16,7 @@ export function useLogin() {
       queryClient.setQueryData(["user"], user.user);
       toast.success("Login Successful!");
       setShowConfetti(true);
-      navigate("/menu", { replace: true });
+      navigate("/", { replace: true });
     },
     onError: (err) => {
       console.log("ERROR", err);
