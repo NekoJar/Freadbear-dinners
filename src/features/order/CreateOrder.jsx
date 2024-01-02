@@ -9,6 +9,7 @@ import { clearCart, getCart, getTotalCartPrice } from "../cart/cartSlice";
 import { formatCurrency } from "../../utils/helpers";
 import { fetchAddress } from "../user/userSlice";
 import { useUser } from "../authentication/useUser";
+import { useAppContext } from "../../ui/AppLayout";
 
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
@@ -17,6 +18,7 @@ const isValidPhone = (str) =>
   );
 
 function CreateOrder() {
+  const { isPaid, setIsPaid } = useAppContext();
   const { user } = useUser();
   const { fullName } = user.user_metadata;
   const {
@@ -128,7 +130,14 @@ function CreateOrder() {
                 : ""
             }
           />
-          <Button disabled={isSubmiting || isLoadingAddress} type="primary">
+          <Button
+            disabled={isSubmiting || isLoadingAddress}
+            type="primary"
+            onClick={() => {
+              console.log(isPaid);
+              setIsPaid(false);
+            }}
+          >
             {isSubmiting
               ? "Placing order..."
               : `Order now ${formatCurrency(totalPrice)}`}

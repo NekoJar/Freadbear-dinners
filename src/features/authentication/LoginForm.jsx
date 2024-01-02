@@ -7,12 +7,13 @@ import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
 import { Form } from "react-router-dom";
+import Confetti from "../../ui/Confetti";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, isLoading } = useLogin();
+  const { login, isLoading, showConfetti } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -67,7 +68,7 @@ function LoginForm() {
           </Button>
         </div>
       </Form>
-      <div class="mt-4 text-center text-sm text-gray-600">
+      <div className="mt-4 text-center text-sm text-gray-600">
         <p>
           Still haven't created an account?
           <a href="/signup" className="text-black hover:underline">

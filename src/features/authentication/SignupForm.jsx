@@ -95,7 +95,7 @@ function SignupForm() {
           </Button>
         </div>
       </Form>
-      <div class="mt-4 text-center text-sm text-gray-600">
+      <div className="mt-4 text-center text-sm text-gray-600">
         <p>
           Already have an account?
           <a href="/login" className="text-black hover:underline">

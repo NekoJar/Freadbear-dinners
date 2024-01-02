@@ -9,9 +9,18 @@ function Header() {
   const { fullName } = user.user_metadata;
   return (
     <header className="relative z-10 flex items-center justify-around  bg-yellow-400 px-4 py-4 uppercase sm:px-6">
-      <Link to="/" className="hidden tracking-widest md:block">
-        Freadbear's Family Diner Co.
-      </Link>
+      <div className="flex flex-row items-center gap-8">
+        <Link to="/menu">
+          <img
+            className="block h-[50px] w-[50px] sm:hidden"
+            src="public/FazEnt_logo_new.svg"
+            alt="icon"
+          />
+        </Link>
+        <Link to="/menu" className="hidden tracking-widest md:block">
+          Freadbear's Family Diner Co.
+        </Link>
+      </div>
       <SearchOrder />
       <span className="hidden text-sm font-semibold md:block">{fullName}</span>
       <Logout />

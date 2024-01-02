@@ -4,9 +4,9 @@ import bgVideo from "../../public/pizza-video-2.mp4";
 
 function Login() {
   return (
-    <div class="flex h-screen">
-      <div class="hidden flex-1 items-center justify-center bg-[rgba(255,255,255,0.3)] text-black lg:flex">
-        <div class="max-w-md text-center">
+    <div className="flex h-screen">
+      <div className="bg-[rgba(0,0,0,0.2 )] hidden flex-1 items-center  justify-center text-black lg:flex">
+        <div className="max-w-md text-center">
           <video
             className="absolute inset-0 z-[-1] h-[100%] w-[100%] object-cover"
             src={bgVideo}
@@ -17,8 +17,8 @@ function Login() {
         </div>
       </div>
 
-      <div class="flex w-full items-center justify-center bg-yellow-50 lg:w-1/2">
-        <div class="w-full max-w-md p-6">
+      <div className="flex w-full items-center justify-center bg-yellow-50 lg:w-1/2">
+        <div className="w-full max-w-md p-6">
           <h1 className="mb-6 text-center text-3xl font-semibold text-black">
             Sign In
           </h1>

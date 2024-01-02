@@ -11,7 +11,7 @@ function Menu() {
   return (
     <>
       <ul className="divide-y divide-stone-200 px-4">
-        {menus.map((pizza) => (
+        {menus.slice(0, 9).map((pizza) => (
           <MenuItem pizza={pizza} key={pizza.id} />
         ))}
       </ul>

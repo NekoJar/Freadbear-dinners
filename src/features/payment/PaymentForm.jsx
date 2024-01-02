@@ -1,12 +1,16 @@
-import { useState } from "react";
+import { createContext, useContext, useState } from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useLoaderData } from "react-router-dom";
+import toast from "react-hot-toast";
 
 import Button from "../../ui/Button";
 import { useUser } from "../authentication/useUser";
 import SpinnerMini from "../../ui/SpinnerMini";
+import Confetti from "../../ui/Confetti";
+import { useAppContext } from "../../ui/AppLayout";
 
 const PaymentForm = () => {
+  const { isPaid, setIsPaid } = useAppContext();
   const order = useLoaderData();
 
   const { user } = useUser();
@@ -56,15 +60,16 @@ const PaymentForm = () => {
       alert(paymentResult.error.message);
     } else {
       if (paymentResult.paymentIntent.status === "succeeded") {
-        alert("Payment Successful!");
+        toast.success("Payment Successful!");
         setPaymentSuccess(true);
+        setIsPaid(true);
       }
     }
   };
 
   return (
     <div className="-m-16 flex h-[300px] flex-col items-center justify-center">
-      {!paymentSuccess ? (
+      {!paymentSuccess && !isPaid ? (
         <form
           className="h-[100px] min-w-[300px] space-y-8 sm:min-w-[700px]"
           onSubmit={paymentHandler}
@@ -82,6 +87,7 @@ const PaymentForm = () => {
       ) : (
         <div>
           <h2>Payment Successful!</h2>
+          <Confetti />
           {/* You can add additional information or UI elements here */}
         </div>
       )}
