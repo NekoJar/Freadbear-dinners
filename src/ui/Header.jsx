@@ -3,6 +3,7 @@ import SearchOrder from "../features/order/SearchOrder";
 import Username from "../features/user/Username";
 import Logout from "../features/authentication/Logout";
 import { useUser } from "../features/authentication/useUser";
+import Logo from "../../public/FazEnt_logo.svg";
 
 function Header() {
   const { user } = useUser();
@@ -13,8 +14,8 @@ function Header() {
         <Link to="/">
           <img
             className="block h-[50px] w-[50px] sm:hidden"
-            src="public/FazEnt_logo.png"
-            alt="icon"
+            src={Logo}
+            alt="Logo"
           />
         </Link>
         <Link to="/" className="hidden tracking-widest md:block">
