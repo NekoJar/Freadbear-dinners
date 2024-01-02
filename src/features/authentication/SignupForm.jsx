@@ -18,7 +18,7 @@ function SignupForm() {
 
   return (
     <>
-      <Form onSubmit={onSubmit} className="space-y-4">
+      <Form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>
           <label className="block text-sm font-medium text-gray-700">
             Fullname
