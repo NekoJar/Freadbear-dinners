@@ -11,8 +11,6 @@ function Cart() {
   const dispatch = useDispatch();
   const { user } = useUser();
   const { fullName } = user.user_metadata;
-
-  const username = useSelector(getUsername);
   const cart = useSelector(getCart);
 
   if (!cart.length) return <EmptyCart />;

@@ -8,12 +8,13 @@ import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
 import { Form } from "react-router-dom";
 import Confetti from "../../ui/Confetti";
+import GoogleLoginButton from "../../ui/GoogleLoginButton";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, isLoading, showConfetti } = useLogin();
+  const { login, isLoading, handleGoogleLogin } = useLogin();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -62,7 +63,13 @@ function LoginForm() {
             className="input mt-1 w-full p-2"
           />
         </div>
-        <div>
+        <div className="space-y-4">
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full rounded-full bg-black p-4 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-neutral-800 focus:bg-neutral-800 focus:outline-none focus:ring focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed"
+          >
+            Login with Google
+          </button>
           <Button type="login" disabled={isLoading}>
             {!isLoading ? "Log in" : <SpinnerMini />}
           </Button>

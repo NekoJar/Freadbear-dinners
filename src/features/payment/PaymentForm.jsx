@@ -76,13 +76,15 @@ const PaymentForm = () => {
         >
           <h2>Credit Card Payment:</h2>
           <CardElement />
-          <Button
-            type={isProcessingPayment ? "secondary" : "primary"}
-            isLoading={isProcessingPayment}
-            disabled={isProcessingPayment}
-          >
-            {!isProcessingPayment ? "Pay Now" : <SpinnerMini />}
-          </Button>
+          <div className="flex justify-end">
+            <Button
+              type={isProcessingPayment ? "secondary" : "primary"}
+              isLoading={isProcessingPayment}
+              disabled={isProcessingPayment}
+            >
+              {!isProcessingPayment ? "Pay Now" : <SpinnerMini />}
+            </Button>
+          </div>
         </form>
       ) : (
         <div>

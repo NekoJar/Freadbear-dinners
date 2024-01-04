@@ -28,6 +28,30 @@ export async function login({ email, password }) {
   return data;
 }
 
+export async function loginWithGoogle() {
+  try {
+    const { user, session, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+    });
+
+    if (error) {
+      // Handle the error
+      console.error("Google login error:", error.message);
+      // You might want to show an error message to the user
+    } else if (user) {
+      // Handle successful login
+      console.log("Google login successful:", user);
+      // You can navigate to a different page or update the UI based on the logged-in user
+    } else {
+      // This branch should not be reached under normal circumstances
+      console.warn("Unexpected result:", { user, session, error });
+    }
+  } catch (error) {
+    // Handle unexpected errors (e.g., network issues)
+    console.error("Unexpected error during Google login:", error.message);
+  }
+}
+
 export async function getCurrentUser() {
   const { data: session } = await supabase.auth.getSession();
   if (!session.session) return null;

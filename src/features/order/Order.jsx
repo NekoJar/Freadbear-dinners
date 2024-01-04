@@ -96,7 +96,11 @@ function Order() {
       )}
 
       <div>
-        <PaymentForm />
+        <PaymentForm
+          priority={priority}
+          order={order}
+          isLoadingIngredients={fetcher.state === "loading"}
+        />
       </div>
     </div>
   );

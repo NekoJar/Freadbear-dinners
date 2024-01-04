@@ -1,10 +1,14 @@
 import LoginForm from "../features/authentication/LoginForm";
 import LoginHeader from "../ui/LoginHeader";
 import bgVideo from "../../public/pizza-video-2.mp4";
+import Logo from "../../public/FazEnt_logo.svg";
 
 function Login() {
   return (
     <div className="flex h-screen">
+      <div>
+        <img src={Logo} alt="Logo" />
+      </div>
       <div className="bg-[rgba(0,0,0,0.2 )] hidden flex-1 items-center  justify-center text-black lg:flex">
         <div className="max-w-md text-center">
           <video
