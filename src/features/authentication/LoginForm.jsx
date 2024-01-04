@@ -9,6 +9,7 @@ import SpinnerMini from "../../ui/SpinnerMini";
 import { Form } from "react-router-dom";
 import Confetti from "../../ui/Confetti";
 import GoogleLoginButton from "../../ui/GoogleLoginButton";
+import GoogleLogo from "../../../public/icons8-google.svg";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -69,8 +70,13 @@ function LoginForm() {
           </Button>
           <button
             onClick={handleGoogleLogin}
-            className="w-full rounded-full bg-black p-4 text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-neutral-800 focus:bg-neutral-800 focus:outline-none focus:ring focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed"
+            className="flex w-full items-center justify-center gap-4 rounded-full bg-black p-4 text-center text-sm font-semibold uppercase tracking-wide text-white transition-colors duration-300 hover:bg-neutral-800 focus:bg-neutral-800 focus:outline-none focus:ring focus:ring-black focus:ring-offset-2 disabled:cursor-not-allowed"
           >
+            <img
+              className="h-[20px] w-[20px]"
+              src={GoogleLogo}
+              alt="GoogleLogo"
+            />
             Log in with Google
           </button>
         </div>
