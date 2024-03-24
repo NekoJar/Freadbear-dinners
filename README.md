@@ -1,8 +1,27 @@
-# React + Vite
+# Fredbear Dinners - Website App for Pizza Ordering
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the README file for the Fredbear Dinners website app, which allows users to conveniently order pizzas and sides for delivery or pickup directly from their browser.
 
-Currently, two official plugins are available:
+### Features
+-  Quick and Easy Ordering: Order your favorite pizzas and sides with just a few taps. Save your address and     payment information for even faster checkout.
+- User-Friendly Interface: Our app features a clear and easy-to-use interface with high-quality photos of our menu items.
+  
+### Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-  Go to our website.
+-  Create an account or sign in with an existing account.
+-  Browse the menu and choose your pizzas.
+-  Review your order and proceed to checkout.
+-  Choose your payment method and complete your order.
+  
+### Technologies Used
+
+- React.Js
+- Javascript
+- Tailwind CSS
+- Supabase
+- Stripe.Js
+
+### Contributing
+
+If you're interested in contributing to the development of this app, please send me an email to my email account.
