@@ -8,7 +8,7 @@ This is the README file for the Fredbear Dinners website app, which allows users
   
 ### Getting Started
 
--  Go to our website.
+-  Go to our website [freadbear-family-dinner.netlify.app](https://freadbear-family-dinner.netlify.app).
 -  Create an account or sign in with an existing account.
 -  Browse the menu and choose your pizzas.
 -  Review your order and proceed to checkout.
