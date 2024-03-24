@@ -24,4 +24,4 @@ This is the README file for the Fredbear Dinners website app, which allows users
 
 ### Contributing
 
-If you're interested in contributing to the development of this app, please send me an email to my email account.
+If you're interested in contributing to the development of this app, please send me an email to jarrworkspace@gmail.com
